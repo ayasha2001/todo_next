@@ -15,7 +15,21 @@ const TodoListItem = ({ todo, desc, id }) => {
     console.log(json, "updated todo");
   };
 
-  const handleDelete = () => {};
+  const handleDelete = async () => {
+    try {
+      const res = await fetch(`/api/deleteTodo/${id}`, {
+        method: "DELETE",
+      });
+
+      if (res.status === 200) {
+        console.log("Todo deleted successfully");
+      } else {
+        console.error("Failed to delete todo");
+      }
+    } catch (error) {
+      console.error("Error deleting todo:", error);
+    }
+  };
   return (
     <div className="li-container">
       <div className="flexy">
