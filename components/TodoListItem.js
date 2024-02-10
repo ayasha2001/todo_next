@@ -1,7 +1,20 @@
 import React from "react";
 
-const TodoListItem = ({ todo, desc }) => {
-  const handleComplete = () => {};
+const TodoListItem = ({ todo, desc, id }) => {
+  const handleComplete = async () => {
+    console.log("handleComplete");
+    const res = await fetch(`/api/updateTodo/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ completed: true }),
+    });
+
+    const json = await res.json();
+    console.log(json, "updated todo");
+  };
+
   const handleDelete = () => {};
   return (
     <div className="li-container">

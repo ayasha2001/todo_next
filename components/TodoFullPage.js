@@ -17,6 +17,7 @@ const TodoFullPage = () => {
         id: todo._id.toString(),
         todo: todo.todo,
         desc: todo.desc,
+        completed:todo.completed
       };
     });
     setTodoArr(a);
@@ -24,10 +25,18 @@ const TodoFullPage = () => {
 
   return (
     <div>
-      {console.log(todoArr)}
       <TodoForm />
       {todoArr.map((todo) => {
-       return <TodoListItem todo={todo.todo} desc={todo.desc} />;
+        if (!todo.completed) {
+          return (
+            <TodoListItem
+              todo={todo.todo}
+              desc={todo.desc}
+              id={todo.id}
+              key={todo.id}
+            />
+          );
+        }
       })}
     </div>
   );
