@@ -1,0 +1,31 @@
+.main-div {
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  border: 1px solid;
+  padding: 5px;
+}
+.label-input-container {
+  width: 500px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.label-input-container input {
+  width: 400px;
+  text-align: left;
+}
+.btn-container {
+  margin-bottom: 5px;
+}
+.btn-container button {
+  margin: 5px;
+}
+.li-container {
+  width: 500px;
+  margin: auto;
+}
+.flexy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
